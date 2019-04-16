@@ -1,0 +1,33 @@
+reset
+set terminal pdf size 10cm,6cm 
+set output "multiplot.pdf"
+
+set tmargin 0.4
+set bmargin 0.4
+set lmargin 3
+set rmargin 3
+
+set multiplot layout 4,1 title "Auto-layout of stacked plots\n" font ",12"
+
+set key autotitle column nobox samplen 1 noenhanced
+unset title
+set style data boxes
+set xrange [0:20]
+set yrange [-1 : 1]
+
+set style rect fc lt -1 fs solid 0.15 noborder
+
+set obj rect from 0, graph 0 to 5, graph 1
+set obj rect from 10, graph 0 to 15, graph 1
+
+set tics scale 0 font ",8"
+unset xtics
+
+plot sin(x)
+plot cos(x)
+
+set xtics nomirror
+
+set xlabel "Age [ka]"
+plot sin(2*x)
+
