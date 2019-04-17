@@ -36,6 +36,6 @@ plot cos(x)
 
 set xtics nomirror
 
-set xlabel "Age [ka]"
+set xlabel "Age/ka"
 plot sin(2*x)
 
