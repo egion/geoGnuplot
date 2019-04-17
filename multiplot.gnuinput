@@ -7,7 +7,8 @@ set bmargin 0.4
 set lmargin 3
 set rmargin 3
 
-set multiplot layout 4,1 title "Auto-layout of stacked plots\n" font ",12"
+set multiplot layout 4,1  title "\n" font ",12"
+
 
 set key autotitle column nobox samplen 1 noenhanced
 unset title
@@ -23,8 +24,15 @@ set obj rect from 10, graph 0 to 15, graph 1
 set tics scale 0 font ",8"
 unset xtics
 
+set label 1 "Dwarves" at 2.5, graph 1 center offset 0,1
+set label 2 "Elves" at 12.5, graph 1 center offset 0,1
+
 plot sin(x)
+unset label 1
+unset label 2
 plot cos(x)
+
+
 
 set xtics nomirror
 
