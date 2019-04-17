@@ -1,0 +1,22 @@
+
+
+set terminal pdf
+set output "ColoredPercentage.pdf"
+
+
+set ylabel "Percentage"
+set yrange [0:100]
+
+set xlabel "Age /ka"
+set xrange [0:10]
+
+set key outside
+set key right top
+set key reverse
+set key invert
+
+unset grid
+
+plot 'percentageData.txt' u 1:2 with filledcurves x title "Dwarves",\
+     'percentageData.txt' u 1:2:($2+$3) with filledcurves below title "Elves",\
+     'percentageData.txt' u 1:($2+$3):($2+$3+$4) with filledcurves below title "Men"
